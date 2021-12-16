@@ -9,4 +9,8 @@ show tables
 use layantest
 don't forget ';'
 
+alias ss='symfony console' créer un alias 
+
+ss security:hash-password hash a password
+
 
