@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Companies{% endblock %}
+
+{% block body %}
+<h1>{{pluralize(companies|length, 'companie', 'companies')}}</h1>
+
+{% for companie in companies %}
+
+    <div>
+    <h2>{{ companie.name }}</h2>
+    <p>Employees: {{  companie.emloyees }}</p>
+    </div>
+    
+{% endfor %}
+
+{% endblock %}
