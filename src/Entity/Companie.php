@@ -4,13 +4,18 @@ namespace App\Entity;
 
 use App\Repository\CompanieRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\traits\Timestampable;
 
 /**
  * @ORM\Entity(repositoryClass=CompanieRepository::class)
  * @ORM\Table(name="companies")
+ * @ORM\HasLifecycleCallbacks
  */
 class Companie
 {
+
+    use Timestampable;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -27,6 +32,8 @@ class Companie
      * @ORM\Column(type="integer")
      */
     private $emloyees;
+
+    
 
     public function getId(): ?int
     {
@@ -56,4 +63,6 @@ class Companie
 
         return $this;
     }
+
+    
 }

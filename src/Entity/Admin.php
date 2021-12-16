@@ -6,13 +6,18 @@ use App\Repository\AdminRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use App\Entity\traits\Timestampable;
 
 /**
  * @ORM\Entity(repositoryClass=AdminRepository::class)
  * @ORM\Table(name="admins")
+ * @ORM\HasLifecycleCallbacks
  */
 class Admin implements UserInterface, PasswordAuthenticatedUserInterface
 {
+
+    use Timestampable;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -45,6 +50,7 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string")
      */
     private $password;
+
 
     
 
@@ -160,6 +166,5 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
-
     
 }

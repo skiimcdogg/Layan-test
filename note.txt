@@ -1,0 +1,12 @@
+sc make:entity Admins : add more filds to Admins
+sc make:migration : end the migration
+sc doctrine:migrations:migrate : add the migration
+sc doctrine:migrations:migrate prev : cancel the migration
+
+
+mysql -u root -p : connect mysql (realmdp43)
+show tables
+use layantest
+don't forget ';'
+
+
